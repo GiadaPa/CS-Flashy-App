@@ -12,4 +12,6 @@ Then a "correct" and an "incorrect" buttons are shown and by pressing one of the
 At the end of the deck a "show results" button appears and by pressing it the results are shown, as well as a "go to deck of incorrects cards" button, which makes the exercise restart with all the wrong cards, and an "add card" button, with which a new card can be added to the current deck.
 If there are no more incorrect cards a "back to deck" button is shown and by pressing it, it will prompts back to the list of decks.
 
-//the timer operations to re-sort the cards in the deck were not implemented!
+(the timer operations to re-sort the cards in the deck were not implemented!)
+
+.expo, .expo-shared and node-modules folders were not uploaded to this directory
