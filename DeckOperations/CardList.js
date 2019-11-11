@@ -243,7 +243,7 @@ handleDelete = () => {
                             <Text style={styles.scoreC}>     {this.state.correctList.length} correct cards</Text>
                             <Text style={styles.scoreI}>     {this.state.incorrectList.length} incorrect cards</Text>
                             <Separator />
-                            <Button title="GO TO DECK OF INCORRECT CARDS"
+                            <Button title="EXERCISE AGAIN"
                                     color='cyan'
                                     onPress={this.sortedDeck}
                                     />
