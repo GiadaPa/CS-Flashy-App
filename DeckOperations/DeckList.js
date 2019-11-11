@@ -60,13 +60,12 @@ export default class DeckList extends React.Component {
             showRenameDeck: !prevState.showRenameDeck,
             selectedDeck: deck.name
         }))
-        //console.log(deck.name)
     } 
 //--------------------------------------------------------------------------------------
 
 
 //--------------------------------------------------------------------------------------
-//does not show the renamed deck in the list ----> DO NOT WORKS
+//does not show the renamed deck in the list ----> DOES NOT WORK
     renameDeck = newName => {
         this.state.selectedDeck = newName.name
         this.setState({
@@ -83,34 +82,32 @@ export default class DeckList extends React.Component {
             showDeck: !prevState.showDeck,
             selectedDeck: deck.cards,
             }))
-        //console.log(deck.name)
     }
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
 //Function to delete a deck from the list of existing decks
     toggleDeleteDeck = deck => {
-        const deckname = deck.name;
+        const deckname = deck.name
 
         this.setState({
             decks: this.state.decks.filter( deck =>
                 deck.name !== deckname
-            )
-        })
-        //console.log(deck.name)
+                )
+            })
     }
 //--------------------------------------------------------------------------------------
 
-//Function to delete a card ----> DO NOT WORKS
+//Function to delete a card ----> It deletes the card inside the deck but does not save the deletion when the component is rerendered
     deleteCard = cardToDelete => {
         const cardFront = cardToDelete.front
 
         this.setState({
-            showDeck:false,
-            selectedDeck:  this.state.selectedDeck.filter(Object =>
-                Object.front !== cardFront)
+            selectedDeck:  this.state.selectedDeck.filter(card =>
+                card.front !== cardFront
+                )
             })
-        console.log(cardFront, this.state.selectedDeck)
+        //console.log(cardFront, this.state.selectedDeck)
     }
 
 //--------------------------------------------------------------------------------------
