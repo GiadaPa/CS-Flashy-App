@@ -65,15 +65,17 @@ export default class DeckList extends React.Component {
 
 
 //--------------------------------------------------------------------------------------
-//does not show the renamed deck in the list ----> DOES NOT WORK
+//does not show the renamed deck in the list ----> it renames the deck but when the component is rerendered does not save the state
     renameDeck = newName => {
         this.state.selectedDeck = newName.name
         this.setState({
-            showRenameDeck: false,
+            //showRenameDeck: false,
+            selectedDeck: newName.name,
             })
         console.log(this.state.selectedDeck)
     }
 //--------------------------------------------------------------------------------------
+
 
 //--------------------------------------------------------------------------------------
 //Function to select a deck and show the cards it contains
@@ -159,7 +161,9 @@ export default class DeckList extends React.Component {
                     ):
 
                     this.state.showRenameDeck ? (
-                        <RenameDeck onSubmit={this.renameDeck}/>
+                        <RenameDeck onSubmit={this.renameDeck}
+                                    name={this.state.selectedDeck}
+                        />
                     ): 
                         
                     <View>
